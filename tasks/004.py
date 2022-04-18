@@ -18,3 +18,16 @@ print((number_fin))
 n = float(input('n = '))
 num = int(n*10)%10
 print(f'Первая цифра дробной части числа {n} - {num}')
+
+
+
+# 4.	Показать первую цифру дробной части числа
+
+import re
+
+# математический вариант
+num = float(input('Введите число: '))
+print(int(num * 10 % 10))
+
+# через регулярное выражение.
+print(str(re.search(r'[.]\d', str(num)))[-3])
