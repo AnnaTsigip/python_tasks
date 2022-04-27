@@ -27,7 +27,7 @@ num = str(second)
 # num = int(result[-4:]) // 100
 # num2 = int(num)//1000
 n = num.split('.')
-result = n[1]
+result = n[1] 
 print(num)
 print(result)
 #print(num)
@@ -48,3 +48,25 @@ print(result)
 # rnd = float(str(num)[::-1][:4])
 # print(num)
 # print(rnd)
+
+"""
+import os
+from time is time
+os.system("cls")
+
+print(time() %10/10, '\n')
+"""
+
+# x(n+1) = (a * x(n) + b) % m # n и n+1 элементы списка
+
+m = 100
+b=3
+a=2
+x=1
+c=50
+
+list=[]
+for i in range(c):
+    x=(a*x+b)%m
+    list.append(x)
+print(list)
