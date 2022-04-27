@@ -3,10 +3,8 @@
 '''
 через рандом: 
 
-
 import random
-
-
+listA = [random.randint(1,100) for item in range(10)] # задание списка из 10 элементов рандомом от 1 до 99
 listA = [2, 8, 4, 31, 1, 15] 
 random.shuffle(listA)
 print(listA)
