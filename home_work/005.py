@@ -5,29 +5,43 @@
 # k=2 => 2x² + 4x + 5 = 0 или x² + 5 = 0 или 10*x² = 0
 
 
-#как убрать последний +
+import random
+k=int(input('k = '))
+
+data = open('text_005.txt','a', encoding='utf-8')
+
+for i in range(1, k+1):
+    index = k
+    k= k-1
+    lst = random.randint(0,101)
+    data.write(f'{lst}x^{index} + ')
+
+data.write(f'{random.randint(0,100)} = 0\n') # добавляет свободный элемент
+data.closed
+
+'''
+как убрать последний +
 
 import random
 k=int(input('k = '))
-listA = [random.randint(1,100) for item in range(k)] 
+lstA = [random.randint(0,101) for item in range(k)] 
 
-print(listA)
+print(lstA)
 
-listB = []
-for i in range(len(listA)):
+lstB = []
+for i in range(len(lstA)):
     #listB.append(str(listA[i]) + '*x**' + str(k-1) + ' + ')
-    listB.append(f'{str(listA[i])}x**{str(k-1)} + ')
+    lstB.append(f'{str(lstA[i])}x^{str(k-1)} + ')
     k=k-1
-print(listB)
+print(lstB)
 
-listB.append(str(' = 0'))
-text = ''.join(listB)
+lstB.pop
+#lstB.append(str(lstB[-1]))
+lstB.append(' = 0')
+text = ' '.join(lstB)
 print(text)
-
-
+#print(type(text))
 
 with open('text_005.txt', 'a', encoding='utf-8') as r:
      r.write(text + '\n')
-
-
-
+'''
