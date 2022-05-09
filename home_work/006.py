@@ -15,8 +15,6 @@
 # data.write(f'{random.randint(0,100)} = 0\n') # добавляет свободный элемент
 # data.closed
 
-
-
 with open('text_006_1.txt', 'r', encoding='utf-8') as r:
     pol_1 = r.readlines()
     print(pol_1)
@@ -26,6 +24,7 @@ with open('text_006_1.txt', 'r', encoding='utf-8') as r:
 with open('text_006_2.txt', 'r', encoding='utf-8') as r:
     pol_2 = r.readlines()
     #print(pol_2)
+
 
 pol_1new = str(pol_1)
 pol_1new = pol_1new.replace(' = 0', '')
