@@ -13,20 +13,24 @@ take = int(input("Максимальное количество конфет м�
 # сколько нужно взять конфет для победы: 
 def take_to_have_for_first(candies, take):
      take_candies = candies % (take + 1)
-     return(f'чтобы выиграть первому ходящему необходимо взять {take_candies}')
+     if take_candies == 0:
+        take_candies = 1 # чтобы избежать ухода в минус бота
+     return(f'чтобы выиграть необходимо взять {take_candies}')
 
 count = 0
 
-while candies > take:
+while candies > 0:
     count += 1
     player = int(input("Ход первого игрока. Возьмите конфеты: "))
     candies = candies - player
-    bot = int(randint(1,take))
-    print(f'bot взял {bot} конфет')
-    candies = candies - bot
-    print(f'осталось конфет: {candies}')
-    #print(take_to_have_for_first(candies, take))
-if candies < take:
+    #print(f'осталось конфет: {candies}')
+    if candies > 0: 
+        bot = int(randint(1,take))
+        print(f'bot взял {bot} конфет')
+        candies = candies - bot
+        print(f'осталось конфет: {candies}')
+        #print(take_to_have_for_first(candies, take))
+if candies == 0:
     print('Игра окончена')
 if take % 2 != 0:
     print(f'Победил игрок player')

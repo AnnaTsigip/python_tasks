@@ -15,29 +15,38 @@ take = int(input("Максимальное количество конфет м�
 # сколько нужно взять конфет для победы: 
 def take_to_have_for_first(candies, take):
      take_candies = candies % (take + 1)
-     return(f'чтобы выиграть первому ходящему необходимо взять {take_candies}')
+     if take_candies == 0:
+        take_candies = take
+     return(f'чтобы выиграть игроку необходимо взять {take_candies}')
+
 
 first_move = randint(1,2) # определяем, кто ходит первым кто вторым
 print(f"Первым ходит игрок {first_move}")
 second_move = 3 - first_move
 print(f'Второй ходит игрок {second_move}')
+
 # print(take_to_have_for_first(candies, take)) метод сколько брать
+
 count = 0 
-while candies > take:
+
+while candies > 0:
     count += 1
     player1 = int(input("Ход первого игрока. Возьмите конфеты: "))
     candies = candies - player1 
-    player2 = int(input("Ход второго игрока. Возьмите конфеты: "))
-    candies = candies - player2
     print(f'осталось конфет: {candies}')
-    #print(take_to_have_for_first(candies, take))
-if candies < take:
+    #print(take_to_have_for_first(candies, take)) метод сколько брать
+
+    if candies > 0: 
+        player2 = int(input("Ход второго игрока. Возьмите конфеты: "))
+        candies = candies - player2
+        print(f'осталось конфет: {candies}')
+        #print(take_to_have_for_first(candies, take)) метод сколько брать
+
+if candies == 0:
     print('Игра окончена')
 if take % 2 != 0:
     print(f'Победил игрок {first_move}')
 else:
     print(f'Победил игрок {second_move}')
-
-
     
 

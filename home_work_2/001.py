@@ -23,6 +23,6 @@ for i in text_word:
            
 
 print(new_text) # новый список
-text_2 = ' '.join(new_text) # сбор новой строки через /join? разделитель - пробел
+text_2 = ' '.join(new_text) # сбор новой строки через /join разделитель - пробел
 print(text_2)
 

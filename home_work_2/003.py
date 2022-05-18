@@ -8,17 +8,6 @@
 # 12W1B12W3B24W1B14W
 
 
-#date = 'WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW'
-# count = 1
-# s = []
-# for i in range(len(date)):
-#     if date[i] != date[i+1]:
-#         s.append(1*[i])
-#     elif date[i] == date[i+1]:
-#         count +=1
-#     s.append(count * [i])
-# print(s)
-
 
 with open('file_003.txt', 'w') as data:
     data.write('WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW')
@@ -28,20 +17,23 @@ with open('file_003.txt', 'r') as data:
 
 #string = 'WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW'
 cout = 1
+s = ""
 for i in range(len(string)-1):
     if i <= len(string):
         if string[i] == string[i + 1]:
             cout += 1
+    
         else:
             a = string[i]
-            print(cout, string[i], end=' ')
+            s+= str(cout) + string[i]
+            #print(cout, string[i], end=' ')
             cout = 1
-
-print(cout, string[i], end=' ')
-
+s+= str(cout) + string[i]
+#print(cout, string[i], end=' ')
+print(s)
 #как перевести чтоб сохранить в файл
-# with open('file_003_2.txt', 'w') as data:
-#     data.write(cout, string[i])
+with open('file_003_2.txt', 'w') as data:
+    data.write(s)
 
     
 
