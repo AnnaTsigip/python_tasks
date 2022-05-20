@@ -2,33 +2,24 @@
 # Найти произведение элементов на указанных позициях.
 # Позиции хранятся в файле file.txt в одной строке одно число
 
+# #ввести список с клавиатуры:
+# a=[int(i) for i in input().stlit]
+# список аналогичный a:
+# b=[item for item in a]
 
-from functools import reduce
-import os
-import random
-os.system("cls")
+N = int(input('N = ')) # определяем N
+lis_N = [] # создаем список 
+prod = 1
+f = open('file_17.txt', 'r')
+f.close
 
-n = random.randint(16, 26)
+lis_N = [i for i in range(-N, N+1)]
+print(lis_N)
 
-list = [i for i in range(-n, n+1)]
+# for i in range(-N, N+1):
+#     lis_N.append(i)
+# print(lis_N)
 
-print('Задан список: ', list, '\n')
-
-with open('task017.txt', 'w') as data:  # случайным образом задаем позиции и записываем в файл
-    for i in range(int(n/2)):
-        data.write(f'{random.randint(0, n*2)}\n')
-def read2list(file):    # читает в список из файла
-    with open(file, 'r') as file:
-        position_index = [int(line.strip()) for line in file.readlines()]
-        position_index.sort()
-        print('Выбраны позиции с индексами: \t', *position_index)
-        return position_index
-
-
-position_index = read2list('task017.txt')
-position_element = [list[i] for i in position_index]
-mult = reduce((lambda x, y: x*y), position_element)
-
-print('Элементы на указанных позициях:\t', *position_element,
-      '\nИх произведение равно : \t', mult, '\n')
-
+for line in f:
+    prod = prod * int(lis_N[int(line)]) # 
+print(prod)
